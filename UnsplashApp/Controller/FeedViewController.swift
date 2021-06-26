@@ -9,8 +9,10 @@ import UIKit
 
 class FeedViewController: UIViewController {
   
+  // MARK: Properties
   let feedView = FeedView()
   
+  // MARK: Life-Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
@@ -21,9 +23,9 @@ class FeedViewController: UIViewController {
     feedView.collectionView.dataSource = self
     feedView.collectionView.delegate = self
   }
-  
 }
 
+// MARK: Delegate & DataSource
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 10
@@ -34,6 +36,5 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     cell.congifure()
     return cell
   }
-  
   
 }
