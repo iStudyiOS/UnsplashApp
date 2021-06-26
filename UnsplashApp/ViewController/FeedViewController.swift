@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FeedViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
   }
   
   
