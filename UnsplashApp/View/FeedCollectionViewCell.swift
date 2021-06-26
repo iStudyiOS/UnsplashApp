@@ -17,6 +17,8 @@ class FeedCollectionViewCell: UICollectionViewCell {
   let imageView: UnsplashView = {
     let v = UnsplashView()
     v.layer.cornerRadius = 8
+    v.layer.borderWidth = 1
+    v.layer.borderColor = UIColor.gray.cgColor
     v.translatesAutoresizingMaskIntoConstraints = false
     return v
   }()
