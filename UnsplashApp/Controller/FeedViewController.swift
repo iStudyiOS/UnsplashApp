@@ -12,9 +12,11 @@ class FeedViewController: UIViewController {
   // MARK: Properties
   let feedView = FeedView()
   
+  
   // MARK: Life-Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    let tabBarController = UITabBarController()
     configure()
   }
   
