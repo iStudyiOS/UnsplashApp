@@ -27,7 +27,7 @@ class FeedView: UIView {
                              height: Metric.screenWidth / 3)
     
     let v = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    v.backgroundColor = .lightGray
+    v.backgroundColor = UIColor(named: "backgroundColor")
     v.register(FeedCollectionViewCell.self, forCellWithReuseIdentifier: FeedCollectionViewCell.cellIdentifier)
     return v
   }()

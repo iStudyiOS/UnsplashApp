@@ -11,9 +11,13 @@ class TabBarController: UITabBarController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.tabBar.barTintColor = UIColor.black
-    self.tabBar.tintColor = UIColor.white
-    self.tabBar.unselectedItemTintColor = UIColor.white.withAlphaComponent(0.4)
+    self.tabBar.barTintColor = UIColor(named: "mainColor")
+    self.tabBar.tintColor = UIColor(named: "subColor")
+    self.tabBar.unselectedItemTintColor = UIColor.orange.withAlphaComponent(0.4)
+    
+    self.tabBar.layer.borderWidth = 0.50
+    self.tabBar.layer.borderColor = UIColor.clear.cgColor
+    self.tabBar.clipsToBounds = true
     
     let firstVC = FeedViewController()
     let firstViewTabBarItem = UITabBarItem(title: "Feed", image:UIImage(systemName: "flame") , tag: 0)

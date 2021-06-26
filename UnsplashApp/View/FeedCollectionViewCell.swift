@@ -18,7 +18,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     let v = UnsplashView()
     v.layer.cornerRadius = 8
     v.layer.borderWidth = 1
-    v.layer.borderColor = UIColor.gray.cgColor
+    v.layer.borderColor = UIColor(named: "mainColor")?.cgColor
     v.translatesAutoresizingMaskIntoConstraints = false
     return v
   }()
@@ -47,7 +47,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
   
   // MARK: Cell Configure
   func congifure() {
-    imageView.image = UIImage(named: "loading_image")
+    imageView.image = UIImage(named: "loading_image")?.withTintColor(UIColor(named: "mainColor")!)
     imageView.backgroundColor = .white
   }
 }

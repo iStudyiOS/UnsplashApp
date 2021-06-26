@@ -11,6 +11,7 @@ class FavoritesViewController: UIViewController {
   
   // MARK: Properties
   let favoriteView = FeedView()
+  let favoriteItems = [UnsplashType]()
   
   // MARK: Life-Cycle
   override func viewDidLoad() {
@@ -31,7 +32,18 @@ class FavoritesViewController: UIViewController {
 // MARK: Delegate & DataSource
 extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    if favoriteItems.count == 0 {
+      let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+      emptyLabel.text = "0 Favorites :( Add your Favorites!"
+      emptyLabel.textColor = .orange
+      emptyLabel.font = .boldSystemFont(ofSize: 23)
+      emptyLabel.textAlignment = .center
+      collectionView.backgroundView = emptyLabel
+      emptyLabel.backgroundColor = .white
+      return 0
+    } else {
+      return favoriteItems.count
+    }
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
