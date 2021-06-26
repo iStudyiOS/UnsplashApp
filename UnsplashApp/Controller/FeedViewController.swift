@@ -31,8 +31,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.cellIdentifier, for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
-    
-    cell.imageView.image = UIImage(named: "loading_image")
+    cell.congifure()
     return cell
   }
   

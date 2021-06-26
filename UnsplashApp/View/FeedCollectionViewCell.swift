@@ -16,6 +16,8 @@ class FeedCollectionViewCell: UICollectionViewCell {
   // MARK: UI
   let imageView: UnsplashView = {
     let v = UnsplashView()
+    v.layer.cornerRadius = 8
+    v.translatesAutoresizingMaskIntoConstraints = false
     return v
   }()
   
@@ -32,13 +34,19 @@ class FeedCollectionViewCell: UICollectionViewCell {
   override func prepareForReuse() {
     super.prepareForReuse()
     imageView.image = nil
-    imageView.backgroundColor = .white
+    
   }
   
-  // MARK: Configure
+  // MARK: Layout
   override func layoutSubviews() {
     imageView.snp.makeConstraints { make in
-      make.edges.equalTo(self)
+      make.edges.equalToSuperview().inset(6)
     }
+  }
+  
+  // MARK: Cell Configure
+  func congifure() {
+    imageView.image = UIImage(named: "loading_image")
+    imageView.backgroundColor = .white
   }
 }

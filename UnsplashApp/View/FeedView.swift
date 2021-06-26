@@ -23,10 +23,10 @@ class FeedView: UIView {
     layout.scrollDirection = .vertical
     layout.minimumLineSpacing = 0
     layout.minimumInteritemSpacing = 0
-    layout.itemSize = CGSize(width: Metric.screenWidth / 2, height: Metric.screenHeight / 2)
+    layout.itemSize = CGSize(width: Metric.screenWidth / 3, height: Metric.screenWidth / 3)
     
     let v = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    v.backgroundColor = .white
+    v.backgroundColor = .lightGray
     v.register(FeedCollectionViewCell.self, forCellWithReuseIdentifier: FeedCollectionViewCell.cellIdentifier)
     return v
   }()
