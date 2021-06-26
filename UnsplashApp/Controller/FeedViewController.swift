@@ -16,11 +16,12 @@ class FeedViewController: UIViewController {
   // MARK: Life-Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    let tabBarController = UITabBarController()
     configure()
   }
   
   func configure() {
+    self.title = "Feed"
+    self.navigationController?.navigationBar.prefersLargeTitles = true
     view = feedView
     feedView.collectionView.dataSource = self
     feedView.collectionView.delegate = self
@@ -30,7 +31,7 @@ class FeedViewController: UIViewController {
 // MARK: Delegate & DataSource
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return 21
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

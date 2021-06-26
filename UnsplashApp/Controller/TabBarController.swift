@@ -25,10 +25,9 @@ class TabBarController: UITabBarController {
     
     secondVC.tabBarItem = secondViewTabBarItem
     
-    let tabBarList = [firstVC, secondVC]
+    let controllers = [firstVC, secondVC]
     
-    viewControllers = tabBarList.map { UINavigationController(rootViewController: $0) }
-    
+    viewControllers = controllers.map { UINavigationController(rootViewController: $0) }
   }
-  
+
 }
