@@ -60,7 +60,7 @@
 		1C2B95E026805CA300BCF83E /* UnsplashApp */ = {
 			isa = PBXGroup;
 			children = (
-				1C2B95F726805DA400BCF83E /* ViewController */,
+				1C2B95F726805DA400BCF83E /* Controller */,
 				1C2B95F626805D9F00BCF83E /* View */,
 				1C2B95F526805D9500BCF83E /* Model */,
 				1C2B95E126805CA300BCF83E /* AppDelegate.swift */,
@@ -86,12 +86,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1C2B95F726805DA400BCF83E /* ViewController */ = {
+		1C2B95F726805DA400BCF83E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				1C2B95E526805CA300BCF83E /* FeedViewController.swift */,
 			);
-			path = ViewController;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
