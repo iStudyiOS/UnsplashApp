@@ -24,6 +24,7 @@ class FeedViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
+    fetchImages()
   }
   
   func configure() {
@@ -32,6 +33,11 @@ class FeedViewController: UIViewController {
     view = feedView
     feedView.collectionView.dataSource = self
     feedView.collectionView.delegate = self
+  }
+  
+  // MARK: Fetch
+  func fetchImages() {
+    let baseUrl = "https://api.unsplash.com/photos/?client_id=\(Bundle.main.apikey)&order_by=ORDER&per_page=30"
   }
 }
 
