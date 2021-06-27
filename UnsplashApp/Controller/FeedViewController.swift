@@ -38,18 +38,40 @@ class FeedViewController: UIViewController {
   // MARK: Fetch
   func fetchImages() {
     let baseUrl = "https://api.unsplash.com/photos/?client_id=\(Bundle.main.apikey)&order_by=ORDER&per_page=30"
+    if let url = URL(string: baseUrl) {
+      URLSession.shared.dataTask(with: url) { (data, response, error) in
+        if let error = error {
+          print("Fetch - Error : \(error)")
+        } else if let response = response as? HTTPURLResponse,
+                  let data = data {
+          print("Status Code: \(response.statusCode)")
+          
+          do {
+            let decoder = JSONDecoder()
+            let picInfo = try decoder.decode([UnsplashType].self, from: data)
+            self.picInfo.append(contentsOf: picInfo)
+          } catch {
+            print(error)
+          }
+        }
+      }.resume()
+    }
   }
 }
 
 // MARK: Delegate & DataSource
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 21
+    return picInfo.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.cellIdentifier, for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
     cell.congifure()
+    
+    DispatchQueue.main.async {
+      cell.imageView.loadImages(from: self.picInfo[indexPath.row].urls.regularUrl)
+    }
     return cell
   }
   
