@@ -19,6 +19,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     v.layer.cornerRadius = 8
     v.layer.borderWidth = 1
     v.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+    v.clipsToBounds = true
     v.translatesAutoresizingMaskIntoConstraints = false
     return v
   }()
