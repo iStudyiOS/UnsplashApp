@@ -11,7 +11,14 @@ class FeedViewController: UIViewController {
   
   // MARK: Properties
   let feedView = FeedView()
-  
+  var picInfo = [UnsplashType]() {
+    didSet {
+      DispatchQueue.main.async {
+        self.feedView.collectionView.reloadData()
+        print(self.picInfo[0].urls)
+      }
+    }
+  }
   
   // MARK: Life-Cycle
   override func viewDidLoad() {
