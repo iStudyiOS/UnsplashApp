@@ -10,12 +10,15 @@ import UIKit
 class FeedViewController: UIViewController {
   
   // MARK: Properties
+  var repository: ImageRepository? = nil
+  var unsplash: UnsplashType? = nil
+  
   let feedView = FeedView()
   var picInfo = [UnsplashType]() {
     didSet {
       DispatchQueue.main.async {
         self.feedView.collectionView.reloadData()
-        print(self.picInfo[0].urls)
+//        print(self.picInfo[0].urls)
       }
     }
   }
@@ -57,6 +60,25 @@ class FeedViewController: UIViewController {
       }.resume()
     }
   }
+  
+  // MARK: Action
+  @objc func onFavorite(_ sender: UIButton) {
+    sender.isSelected.toggle()
+    print("button tapped.")
+    
+    guard let repo = self.repository else { return }
+    guard let unsplash = self.unsplash else { return }
+    
+    switch sender.isSelected {
+    case true:
+      repo.add(item: unsplash)
+      sender.image(for: .selected)
+    case false:
+      repo.remove(item: unsplash)
+      sender.image(for: .normal)
+    }
+    print("count: ", repo.count)
+  }
 }
 
 // MARK: Delegate & DataSource
@@ -69,8 +91,11 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.cellIdentifier, for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
     cell.congifure()
     
+    cell.favoriteButton.tag = indexPath.row
+    cell.favoriteButton.addTarget(self, action: #selector(onFavorite), for: .touchUpInside)
+    
     DispatchQueue.main.async {
-      cell.imageView.loadImages(from: self.picInfo[indexPath.row].urls.regularUrl)
+      cell.imageView.loadImages(from: self.picInfo[indexPath.row].urls!.regularUrl)
     }
     return cell
   }

@@ -8,7 +8,19 @@
 import Foundation
 
 struct UnsplashType: Codable {
-  let urls: Urls
+  let urls: Urls?
+  let id: String?
+  
+  enum CodingKeys: String, CodingKey {
+    case id = "id"
+    case urls = "urls"
+  }
+  
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    id = try values.decodeIfPresent(String.self, forKey: .id)
+    urls = try values.decodeIfPresent(Urls.self, forKey: .urls)
+  }
 }
 
 struct Urls: Codable {

@@ -27,7 +27,7 @@ class UnsplashView: UIImageView {
             DispatchQueue.main.async {
               self.image = UIImage(data: data)
               UnsplashView.cache.setObject(self.image!, forKey: url as AnyObject)
-              print("Image form \(url)")
+//              print("Image form \(url)")
             }
           } else {
             print("url is not correct.")

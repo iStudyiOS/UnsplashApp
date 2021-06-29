@@ -24,10 +24,20 @@ class FeedCollectionViewCell: UICollectionViewCell {
     return v
   }()
   
+  let favoriteButton: UIButton = {
+    let v = UIButton()
+    v.tintColor = .red
+    v.setImage(UIImage(systemName: "star"), for: .normal)
+    v.setImage(UIImage(systemName: "star.fill"), for: .selected)
+    v.translatesAutoresizingMaskIntoConstraints = false
+    return v
+  }()
+  
   // MARK: Init
   override init(frame: CGRect) {
     super.init(frame: frame)
     addSubview(imageView)
+    addSubview(favoriteButton)
   }
   
   required init?(coder: NSCoder) {
@@ -43,6 +53,10 @@ class FeedCollectionViewCell: UICollectionViewCell {
   override func layoutSubviews() {
     imageView.snp.makeConstraints { make in
       make.edges.equalToSuperview().inset(6)
+    }
+    favoriteButton.snp.makeConstraints { make in
+      make.trailing.top.equalToSuperview().inset(10)
+      make.height.width.equalTo(20)
     }
   }
   

@@ -23,6 +23,7 @@
 		1C2EC44226871F7600BA7CB8 /* UnsplashType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EC44126871F7600BA7CB8 /* UnsplashType.swift */; };
 		1CDD966B268839E100543A07 /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CDD966A268839E100543A07 /* APIKEY.plist */; };
 		1CDD966E26883A1E00543A07 /* APIKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDD966D26883A1E00543A07 /* APIKEY.swift */; };
+		1CDD967026883FD000543A07 /* ImageRespotiory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDD966F26883FD000543A07 /* ImageRespotiory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		1C2EC44126871F7600BA7CB8 /* UnsplashType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashType.swift; sourceTree = "<group>"; };
 		1CDD966A268839E100543A07 /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
 		1CDD966D26883A1E00543A07 /* APIKEY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKEY.swift; sourceTree = "<group>"; };
+		1CDD966F26883FD000543A07 /* ImageRespotiory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRespotiory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				1C2EC437268706AD00BA7CB8 /* FeedView.swift */,
 				1C2EC439268706FB00BA7CB8 /* FeedCollectionViewCell.swift */,
 				1C2EC43B2687073C00BA7CB8 /* UnsplashView.swift */,
+				1CDD966F26883FD000543A07 /* ImageRespotiory.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				1C2EC43A268706FB00BA7CB8 /* FeedCollectionViewCell.swift in Sources */,
 				1C2B95E226805CA300BCF83E /* AppDelegate.swift in Sources */,
 				1C2EC43E2687120600BA7CB8 /* TabBarController.swift in Sources */,
+				1CDD967026883FD000543A07 /* ImageRespotiory.swift in Sources */,
 				1C2EC43C2687073C00BA7CB8 /* UnsplashView.swift in Sources */,
 				1C2B95E426805CA300BCF83E /* SceneDelegate.swift in Sources */,
 			);
