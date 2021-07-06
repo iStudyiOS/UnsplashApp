@@ -21,6 +21,8 @@
 		1C2EC43E2687120600BA7CB8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EC43D2687120600BA7CB8 /* TabBarController.swift */; };
 		1C2EC4402687124D00BA7CB8 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EC43F2687124D00BA7CB8 /* FavoritesViewController.swift */; };
 		1C2EC44226871F7600BA7CB8 /* UnsplashType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EC44126871F7600BA7CB8 /* UnsplashType.swift */; };
+		1CCB883E2694296500CA4FD5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1CCB883D2694296500CA4FD5 /* Realm */; };
+		1CCB88402694296500CA4FD5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1CCB883F2694296500CA4FD5 /* RealmSwift */; };
 		1CDD966B268839E100543A07 /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CDD966A268839E100543A07 /* APIKEY.plist */; };
 		1CDD966E26883A1E00543A07 /* APIKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDD966D26883A1E00543A07 /* APIKEY.swift */; };
 		1CDD967026883FD000543A07 /* ImageRespotiory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDD966F26883FD000543A07 /* ImageRespotiory.swift */; };
@@ -52,6 +54,8 @@
 			files = (
 				1C2B95FF26805E0F00BCF83E /* RxMoya in Frameworks */,
 				1C2B95FD26805E0F00BCF83E /* Moya in Frameworks */,
+				1CCB883E2694296500CA4FD5 /* Realm in Frameworks */,
+				1CCB88402694296500CA4FD5 /* RealmSwift in Frameworks */,
 				1C2B95FA26805DD000BCF83E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +153,8 @@
 				1C2B95F926805DD000BCF83E /* SnapKit */,
 				1C2B95FC26805E0F00BCF83E /* Moya */,
 				1C2B95FE26805E0F00BCF83E /* RxMoya */,
+				1CCB883D2694296500CA4FD5 /* Realm */,
+				1CCB883F2694296500CA4FD5 /* RealmSwift */,
 			);
 			productName = UnsplashApp;
 			productReference = 1C2B95DE26805CA300BCF83E /* UnsplashApp.app */;
@@ -180,6 +186,7 @@
 			packageReferences = (
 				1C2B95F826805DD000BCF83E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1C2B95FB26805E0F00BCF83E /* XCRemoteSwiftPackageReference "Moya" */,
+				1CCB883C2694296500CA4FD5 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 1C2B95DF26805CA300BCF83E /* Products */;
 			projectDirPath = "";
@@ -430,6 +437,14 @@
 				minimumVersion = 14.0.1;
 			};
 		};
+		1CCB883C2694296500CA4FD5 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -447,6 +462,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1C2B95FB26805E0F00BCF83E /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		1CCB883D2694296500CA4FD5 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CCB883C2694296500CA4FD5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		1CCB883F2694296500CA4FD5 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CCB883C2694296500CA4FD5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
