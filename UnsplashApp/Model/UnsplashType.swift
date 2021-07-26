@@ -10,7 +10,6 @@ import Realm
 import RealmSwift
 
 class UnsplashType: Object, Decodable {
-  //  @objc dynamic var urls: Urls
   @objc dynamic var urls: String
   @objc dynamic var id: String
   @objc dynamic var isEnable: Bool
@@ -35,7 +34,6 @@ class UnsplashType: Object, Decodable {
     
     let images = try values.nestedContainer(keyedBy: ImageKeys.self, forKey: .urls)
     self.urls = try images.decode(String.self, forKey: .regular)
-    
   }
   
   required override init() {
