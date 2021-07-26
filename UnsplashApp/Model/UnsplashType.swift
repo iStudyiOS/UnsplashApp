@@ -6,26 +6,49 @@
 //
 
 import Foundation
+import Realm
+import RealmSwift
 
-struct UnsplashType: Codable {
-  let urls: Urls?
-  let id: String?
+class UnsplashType: Object, Decodable {
+  //  @objc dynamic var urls: Urls
+  @objc dynamic var urls: String
+  @objc dynamic var id: String
+  @objc dynamic var isEnable: Bool
   
-  enum CodingKeys: String, CodingKey {
-    case id = "id"
-    case urls = "urls"
+  override class func primaryKey() -> String? {
+    return "id"
   }
   
-  init(from decoder: Decoder) throws {
+  enum CodingKeys: String, CodingKey {
+    case id
+    case urls
+  }
+  
+  enum ImageKeys: String, CodingKey {
+    case regular
+  }
+  
+  required init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
-    id = try values.decodeIfPresent(String.self, forKey: .id)
-    urls = try values.decodeIfPresent(Urls.self, forKey: .urls)
+    self.id = try values.decode(String.self, forKey: .id)
+    self.isEnable = false
+    
+    let images = try values.nestedContainer(keyedBy: ImageKeys.self, forKey: .urls)
+    self.urls = try images.decode(String.self, forKey: .regular)
+    
+  }
+  
+  required override init() {
+    id = ""
+    urls = ""
+    isEnable = false
   }
 }
 
-struct Urls: Codable {
-  let regular: String
-  var regularUrl: URL {
+class Urls: Object, Codable {
+  @objc dynamic var regular: String
+  @objc dynamic var regularUrl: URL {
     return URL(string: regular)!
   }
 }
+

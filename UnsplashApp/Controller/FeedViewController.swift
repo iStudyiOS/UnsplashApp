@@ -64,7 +64,6 @@ class FeedViewController: UIViewController {
   // MARK: Action
   @objc func onFavorite(_ sender: UIButton) {
     sender.isSelected.toggle()
-    print("button tapped.")
     
     guard let repo = self.repository else { return }
     guard let unsplash = self.unsplash else { return }
@@ -89,14 +88,11 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.cellIdentifier, for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
-    cell.congifure()
+    cell.congifure(unsplash: picInfo[indexPath.row])
     
     cell.favoriteButton.tag = indexPath.row
     cell.favoriteButton.addTarget(self, action: #selector(onFavorite), for: .touchUpInside)
-    
-    DispatchQueue.main.async {
-      cell.imageView.loadImages(from: self.picInfo[indexPath.row].urls!.regularUrl)
-    }
+      
     return cell
   }
   

@@ -48,7 +48,7 @@ extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDat
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.cellIdentifier, for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
-    cell.congifure()
+    cell.congifure(unsplash: favoriteItems[indexPath.row])
     return cell
   }
 }

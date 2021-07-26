@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class FeedCollectionViewCell: UICollectionViewCell {
   
@@ -61,8 +62,9 @@ class FeedCollectionViewCell: UICollectionViewCell {
   }
   
   // MARK: Cell Configure
-  func congifure() {
+  func congifure(unsplash: UnsplashType) {
     imageView.image = UIImage(named: "loading_image")?.withTintColor(UIColor(named: "mainColor")!)
     imageView.backgroundColor = .white
+    imageView.kf.setImage(with: URL(string: unsplash.urls))
   }
 }
