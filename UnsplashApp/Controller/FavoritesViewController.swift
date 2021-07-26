@@ -10,6 +10,7 @@ import UIKit
 class FavoritesViewController: UIViewController {
   
   // MARK: Properties
+  var environmnet: Environment? = nil
   let favoriteView = FeedView()
   let favoriteItems = [UnsplashType]()
   

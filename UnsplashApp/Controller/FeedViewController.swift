@@ -10,7 +10,8 @@ import UIKit
 class FeedViewController: UIViewController {
   
   // MARK: Properties
-  var repository: ImageRepository? = nil
+  var environment: Environment? = nil
+  
   var unsplash: UnsplashType? = nil
   
   let feedView = FeedView()
@@ -65,7 +66,7 @@ class FeedViewController: UIViewController {
   @objc func onFavorite(_ sender: UIButton) {
     sender.isSelected.toggle()
     
-    guard let repo = self.repository else { return }
+    guard let repo = self.environment?.imageRepository else { return }
     guard let unsplash = self.unsplash else { return }
     
     switch sender.isSelected {
