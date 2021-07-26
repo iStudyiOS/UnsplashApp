@@ -14,12 +14,11 @@ class FeedViewController: UIViewController {
   
   var unsplash: UnsplashType? = nil
   
-  let feedView = FeedView()
+  var feedView = FeedView()
   var picInfo = [UnsplashType]() {
     didSet {
       DispatchQueue.main.async {
         self.feedView.collectionView.reloadData()
-//        print(self.picInfo[0].urls)
       }
     }
   }
@@ -66,18 +65,18 @@ class FeedViewController: UIViewController {
   @objc func onFavorite(_ sender: UIButton) {
     sender.isSelected.toggle()
     
-    guard let repo = self.environment?.imageRepository else { return }
+    guard let env = self.environment else { return }
     guard let unsplash = self.unsplash else { return }
     
     switch sender.isSelected {
     case true:
-      repo.add(item: unsplash)
+      env.imageRepository.add(item: unsplash)
       sender.image(for: .selected)
     case false:
-      repo.remove(item: unsplash)
+      env.imageRepository.remove(item: unsplash)
       sender.image(for: .normal)
     }
-    print("count: ", repo.count)
+    print("count: ", env.imageRepository.count)
   }
 }
 

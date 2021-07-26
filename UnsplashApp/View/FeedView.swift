@@ -8,9 +8,16 @@
 import UIKit
 import SnapKit
 
-class FeedView: UIView {
+protocol GridViewDelegate {
+  func onSelected(item: UnsplashType)
+}
+
+final class FeedView: UIView {
   
   // MARK: Properties
+  private var items: [UnsplashType] = []
+  private var gridViewDelegate: GridViewDelegate? = nil
+  
   struct Metric {
     static var screenSize = UIScreen.main.bounds
     static var screenWidth = screenSize.width
@@ -37,7 +44,7 @@ class FeedView: UIView {
     super.init(frame: frame)
     addSubview(collectionView)
   }
-  
+
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -48,4 +55,14 @@ class FeedView: UIView {
       make.edges.equalTo(self)
     }
   }
+  
+  func updateView(data: [UnsplashType], isAppend: Bool = false) {
+    if isAppend {
+      items.append(contentsOf: data)
+    } else {
+      items = data
+    }
+    self.collectionView.reloadData()
+  }
+
 }

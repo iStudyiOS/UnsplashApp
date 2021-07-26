@@ -29,10 +29,13 @@ final class ImageRepository: ImageRepositoryType {
   
   func add(item: UnsplashType) {
     if let exist = realm.objects(UnsplashType.self).filter("id = '\(item.id)'").first {
-      try! realm.write { exist.isEnable = true }
+      try! realm.write {
+        exist.date = Date()
+        exist.isEnable = true }
       return
     }
     
+    item.date = Date()
     item.isEnable = true
     try! realm.write { realm.add(item) }
   }
@@ -42,6 +45,9 @@ final class ImageRepository: ImageRepositoryType {
   }
   
   func fetch() -> [UnsplashType] {
-    return realm.objects(UnsplashType.self).filter("isEnable = true").map { $0 }
+    return realm.objects(UnsplashType.self)
+      .filter("isEnable = true")
+      .sorted(byKeyPath: "date", ascending: false)
+      .map { $0 }
   }
 }

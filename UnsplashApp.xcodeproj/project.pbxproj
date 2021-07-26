@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C045C0326AEA23500445A9B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045C0226AEA23500445A9B /* Environment.swift */; };
+		1C045C0526AEB0D000445A9B /* UnsplashApp++Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045C0426AEB0D000445A9B /* UnsplashApp++Notification.swift */; };
 		1C2B95E226805CA300BCF83E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B95E126805CA300BCF83E /* AppDelegate.swift */; };
 		1C2B95E426805CA300BCF83E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B95E326805CA300BCF83E /* SceneDelegate.swift */; };
 		1C2B95E626805CA300BCF83E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B95E526805CA300BCF83E /* FeedViewController.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		1C045C0226AEA23500445A9B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		1C045C0426AEB0D000445A9B /* UnsplashApp++Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnsplashApp++Notification.swift"; sourceTree = "<group>"; };
 		1C2B95DE26805CA300BCF83E /* UnsplashApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C2B95E126805CA300BCF83E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C2B95E326805CA300BCF83E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				1CDD966F26883FD000543A07 /* ImageRespotiory.swift */,
 				1CBD9573269452420030831E /* UnsplashAPI.swift */,
 				1C045C0226AEA23500445A9B /* Environment.swift */,
+				1C045C0426AEB0D000445A9B /* UnsplashApp++Notification.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				1CBD9576269470EC0030831E /* ErrorType.swift in Sources */,
 				1C2EC44226871F7600BA7CB8 /* UnsplashType.swift in Sources */,
 				1CDD966E26883A1E00543A07 /* APIKEY.swift in Sources */,
+				1C045C0526AEB0D000445A9B /* UnsplashApp++Notification.swift in Sources */,
 				1C2B95E626805CA300BCF83E /* FeedViewController.swift in Sources */,
 				1C2EC4402687124D00BA7CB8 /* FavoritesViewController.swift in Sources */,
 				1C2EC43A268706FB00BA7CB8 /* FeedCollectionViewCell.swift in Sources */,
